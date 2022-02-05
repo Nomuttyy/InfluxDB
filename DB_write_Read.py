@@ -38,11 +38,8 @@ class DBWriteRead():
         write_api.write(bucket=self.bucket, org=self.org, record=dc, data_frame_measurement_name="aaa")
         write_api.close()
 
-    # def read(self, )
-df = pd.read_csv("/home/nomura/Downloads/20201228_000008F0.CSV")
 test = DBWriteRead("test", "saitolab", "cOEA1hCOJE6G1_JAej9HEuW5u0t9ESXFQBGjhATn23UcpVi49A6jHqPwx0p_GZKKGLOT2LYfXKEKkyO1aUwGAw==", "http://127.0.0.1:8086/")
 test.dfwrite("/home/nomura/Downloads/20201228_000008F0.CSV")
-
 
 
 
