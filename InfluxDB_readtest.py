@@ -9,8 +9,9 @@ bucket = "test"
 org = "saitolab"
 token = "cOEA1hCOJE6G1_JAej9HEuW5u0t9ESXFQBGjhATn23UcpVi49A6jHqPwx0p_GZKKGLOT2LYfXKEKkyO1aUwGAw=="
 # Store the URL of your InfluxDB instance
-url="http://202.13.164.62:8086"
-
+# url="http://202.13.164.62:8086"
+url="http://localhost:8086/"
+# influxdb_client.Data
 client = influxdb_client.InfluxDBClient(
     url=url,
     token=token,
