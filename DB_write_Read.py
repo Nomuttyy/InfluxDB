@@ -1,8 +1,9 @@
+from datetime import timedelta
+from dateutil.relativedelta import relativedelta
+
 import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 import pandas as pd
-from datetime import timedelta
-from dateutil.relativedelta import relativedelta
 from tqdm import tqdm
 
 
