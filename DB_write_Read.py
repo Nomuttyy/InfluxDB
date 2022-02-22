@@ -5,6 +5,7 @@ from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 from tqdm import tqdm
 
+
 class DBWriteRead():
     def __init__(self, bucket: str, org: str, token: str, url: str) -> None:
         self.bucket = bucket
@@ -38,17 +39,20 @@ class DBWriteRead():
         write_api.write(bucket=self.bucket, org=self.org, record=dc, data_frame_measurement_name="aaa")
         write_api.close()
 
-test = DBWriteRead("test", "saitolab", "cOEA1hCOJE6G1_JAej9HEuW5u0t9ESXFQBGjhATn23UcpVi49A6jHqPwx0p_GZKKGLOT2LYfXKEKkyO1aUwGAw==", "http://127.0.0.1:8086/")
-test.dfwrite("/home/nomura/Downloads/20201228_000008F0.CSV")
+if __name__ == "__main__":
+    import configparser
+    config_ini = configparser.ConfigParser()
+    config_ini.read('config.ini')
+    bucket = config_ini['DEFAULT']['bucket']
+    org = config_ini['DEFAULT']['org']
+    token = config_ini['DEFAULT']['token']
+    url = config_ini['DEFAULT']['url']
+    test = DBWriteRead(bucket, org, token, url)
+    test.dfwrite("/home/nomura/Downloads/20201228_000008F0.CSV")
 
 
 
 
 
 
-# self.bucket = "test"
-# self.org = "saitolab"
-# self.token = "cOEA1hCOJE6G1_JAej9HEuW5u0t9ESXFQBGjhATn23UcpVi49A6jHqPwx0p_GZKKGLOT2LYfXKEKkyO1aUwGAw=="
-# # Store the URL of your InfluxDB instance
-# # self.url="http://202.13.164.62:8086"
-# self.url="http://127.0.0.1:8086/"
+
